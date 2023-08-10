@@ -1,0 +1,189 @@
+zabbix_export:
+  version: '6.4'
+  template_groups:
+    - uuid: 721284fdd5a5431490496fc0a7cbf410
+      name: Windows
+  templates:
+    - uuid: 665cf8b8771345008a91d7205c4c50ba
+      template: 'Windows Battery'
+      name: 'Windows Battery'
+      groups:
+        - name: Windows
+      items:
+        - uuid: 4b5292aec2c544a99465c2d42ac27073
+          name: 'Battery Chemistry'
+          type: DEPENDENT
+          key: batteryhealth_chemistry
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.Chemistry
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: 9b6ebeadc32449ccbcb8414394c52e7d
+          name: 'Battery Cycle Count'
+          type: DEPENDENT
+          key: batteryhealth_cyclecount
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.CycleCount
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: 27e2500259af415bb1bccd29dadb0c05
+          name: 'Battery Design Capacity'
+          type: DEPENDENT
+          key: batteryhealth_designcapacity
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.DesignCapacity
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: 5c4aa629f2f74c959b5a9016f4ba019e
+          name: 'Battery Full Charge Capacity'
+          type: DEPENDENT
+          key: batteryhealth_fullchargecapacity
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.FullChargeCapacity
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: 6bab843f839a47149f9581823b97c2fe
+          name: 'Battery: Get attributes'
+          key: batteryhealth_getall
+          delay: 1h
+          history: '0'
+          trends: '0'
+          value_type: TEXT
+        - uuid: 4045d1a6913d4fae9ef535bf2100dbfe
+          name: 'Battery Id'
+          type: DEPENDENT
+          key: batteryhealth_id
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.Id
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: 5fa13a27e4c543fbbf83fd180932040c
+          name: 'Battery Long Term'
+          type: DEPENDENT
+          key: batteryhealth_longterm
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.LongTerm
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: f9d8d42788424bf1816f5b820677cf2f
+          name: 'Battery ManufactureDate'
+          type: DEPENDENT
+          key: batteryhealth_manufacturedate
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.ManufactureDate
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: ed1a3f70cfe84840823e3a9634414cd0
+          name: 'Battery Manufacturer'
+          type: DEPENDENT
+          key: batteryhealth_manufacturer
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.Manufacturer
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: 87469c8549f046d0ba970d451fd0046b
+          name: 'Battery Relative Capacity'
+          type: DEPENDENT
+          key: batteryhealth_relativecapacity
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.RelativeCapacity
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
+        - uuid: 19a086d2e211418a8a72e2de0b64b3e6
+          name: 'Battery SerialNumber'
+          type: DEPENDENT
+          key: batteryhealth_serialnumber
+          delay: '0'
+          history: 3650d
+          trends: '0'
+          value_type: TEXT
+          preprocessing:
+            - type: JSONPATH
+              parameters:
+                - $.SerialNumber
+          master_item:
+            key: batteryhealth_getall
+          tags:
+            - tag: Hardware
+              value: Battery
