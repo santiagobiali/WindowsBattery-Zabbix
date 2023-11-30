@@ -187,3 +187,14 @@ zabbix_export:
           tags:
             - tag: Hardware
               value: Battery
+  triggers:
+    - uuid: 63cec8c237bc48438f1f58f5924b1851
+      expression: '(last(/Windows Battery/batteryhealth_fullchargecapacity) / last(/Windows Battery/batteryhealth_designcapacity)) * 100 < 50'
+      name: 'Battery Full Charge Capacity < 50% Design Capacity'
+      priority: WARNING
+      manual_close: 'YES'
+    - uuid: 5df632fb5d7d4a9181055ae70f735f3f
+      expression: 'last(/Windows Battery/batteryhealth_fullchargecapacity) > last(/Windows Battery/batteryhealth_designcapacity)'
+      name: 'Battery Full Charge Capacity > Design Capacity'
+      priority: HIGH
+      description: 'Battery needs either calibration or replacement.'

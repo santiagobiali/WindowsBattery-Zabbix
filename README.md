@@ -16,3 +16,7 @@ Items:
  - Battery Design Capacity
  - Battery Cycle Count
  - Battery Chemistry
+
+Triggers:
+ - Battery Full Charge Capacity < 50% Design Capacity
+ - Battery Full Charge Capacity > Design Capacity
